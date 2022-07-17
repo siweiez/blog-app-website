@@ -1,0 +1,43 @@
+@mixin flex-center($param) {
+  display: flex;
+  flex-direction: $param;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex($param) {
+  display: flex;
+  flex-direction: $param;
+}
+
+@mixin set-width($w, $max, $min) {
+  width: $w;
+  max-width: $max;
+  min-width: $min;
+}
+
+@mixin hover-effect() {
+  &:hover {
+    opacity: 0.8;
+    transition: all 0.3s ease-in-out;
+  }
+}
+
+@mixin tag-style($bg, $border) {
+  background-color: $bg;
+  border: 1px solid $border;
+  border-radius: 5px;
+  padding: 0.1rem 0.3rem;
+}
+
+$primary-color: #775e43;
+$primary-background-color: #f7f3ee;
+$primary-border-color: #e3dcd3;
+$primary-button-color: #a79076;
+$primary-button-hover-color: #bba68f;
+
+$secondary-color: #7c9555;
+$secondary-background-color: #f0ffda;
+$secondary-border-color: #cddeb4;
+$secondary-button-color: #97b26c;
+$secondary-button-hover-color: #a5be7c;

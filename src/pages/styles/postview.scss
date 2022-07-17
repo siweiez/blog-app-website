@@ -1,0 +1,149 @@
+@import "../../styles/base";
+
+.postview {
+  @include flex-center(column);
+  margin: 3rem 2rem;
+  font-family: "Lora", serif;
+  min-height: 80vh;
+  .edit-mode {
+    padding-top: 2rem;
+    @include flex-center(column);
+    @include set-width(60vw, 760px, 400px);
+    .edit-form {
+      font-size: 18px;
+      @include flex-center(column);
+      .edit-form-item {
+        @include flex-center(column);
+        .input-item:focus {
+          outline: none;
+        }
+      }
+      .edit-title {
+        margin-bottom: 1rem;
+        .edit-title-input {
+          color: #292929;
+          font-family: "Lora", serif;
+          font-size: 30px;
+          border: none;
+          @include set-width(60vw, 760px, 400px);
+        }
+      }
+      .edit-tags {
+        margin-bottom: 1rem;
+        @include set-width(100%, 780px, 300px);
+        @include flex(row);
+        justify-content: space-between;
+        align-items: center;
+        font-family: "Courier Prime", monospace;
+        font-size: 18px;
+        .icon {
+          margin-left: 5px;
+          color: #1c1c1c;
+          @include hover-effect();
+        }
+        ul {
+          list-style: none;
+          @include flex(row);
+          flex-wrap: wrap;
+          li {
+            cursor: pointer;
+            font-size: 18px;
+            margin: 0 0.2rem 0 0;
+            @include tag-style($secondary-background-color, $secondary-border-color);
+            @include flex-center(row);
+          }
+        }
+        .post-tags-right {
+          @include flex-center(row);
+          @include tag-style($secondary-background-color, $secondary-border-color);
+          .tag-input {
+            background-color: #f0ffda;
+            font-family: "Courier Prime", monospace;
+            font-size: 18px;
+            width: 120px;
+            overflow: visible;
+            border: none;
+          }
+        }
+      }
+      .edit-content {
+        .edit-content-input {
+          margin-bottom: 2rem;
+          @include set-width(60vw, 760px, 400px);
+          height: 70vh;
+          font-family: "Lora", serif;
+          font-size: 22px;
+          line-height: 2rem;
+          border: none;
+          overflow: visible;
+        }
+      }
+      .edit-submit-button {
+        height: 3rem;
+        max-width: 400px;
+        margin-bottom: 3rem;
+        background-color: $secondary-button-color;
+        transition: all 0.2s ease-in-out;
+        &:hover {
+          transition: all 0.2s ease-in-out;
+          background-color: $secondary-button-hover-color;
+        }
+      }
+    }
+  }
+
+  .view-mode {
+    @include set-width(60vw, 760px, 400px);
+    .view-title {
+      text-align: center;
+      font-size: 30px;
+      margin-bottom: 1rem;
+      color: $primary-color;
+      font-weight: 500;
+    }
+    .view-icons {
+      @include flex(row);
+      width: 100%;
+      justify-content: space-between;
+      .view-tags {
+        font-family: "Courier Prime", monospace;
+        font-size: 16px;
+        margin-bottom: 1rem;
+        @include flex(row);
+        .tag {
+          cursor: pointer;
+          margin: 0 0.2rem;
+          @include tag-style($primary-background-color, $primary-border-color);
+          @include hover-effect();
+        }
+      }
+      .view-post-settings {
+        @include flex(row);
+        .setting-icon {
+          cursor: pointer;
+          font-size: 24px;
+          margin: 0 0.5rem;
+          @include hover-effect();
+        }
+      }
+    }
+    .view-content {
+      min-height: 600px;
+      margin-bottom: 1rem;
+      line-height: 2rem;
+      font-size: 18px;
+    }
+    .view-footer {
+      width: 100%;
+      @include flex(row);
+      justify-content: space-between;
+      color: #6b6b6b;
+      font-size: 16px;
+      .author {
+        @include hover-effect();
+      }
+    }
+  }
+}
+
+@import "./mediaqueries";

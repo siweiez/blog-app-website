@@ -1,0 +1,58 @@
+@import "../../styles/base";
+
+@mixin post-view($titleSize, $tagSize, $settingSize, $contentSize, $contentLine, $footerSize) {
+  .view-title {
+    font-size: $titleSize;
+  }
+  .view-icons {
+    .view-tags {
+      font-size: $tagSize;
+    }
+    .view-post-settings {
+      .setting-icon {
+        font-size: $settingSize;
+      }
+    }
+  }
+  .view-content {
+    font-size: $contentSize;
+    line-height: $contentLine;
+  }
+  .view-footer {
+    font-size: $footerSize;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .postview {
+    .view-mode {
+      @include post-view(26px, 16px, 22px, 16px, 1.6rem, 14px);
+    }
+  }
+  .about {
+    .about-content {
+      margin: 2rem;
+      font-size: 15px;
+      line-height: 1.6rem;
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  .postview {
+    .view-mode {
+      @include post-view(22px, 14px, 20px, 14px, 1.5rem, 12px);
+    }
+  }
+  .about {
+    .about-content {
+      @include flex(column);
+      align-items: center;
+      margin: 1.8rem 1rem;
+      font-size: 14px;
+      line-height: 1.5rem;
+      .profile-picture {
+        margin-top: 2rem;
+      }
+    }
+  }
+}

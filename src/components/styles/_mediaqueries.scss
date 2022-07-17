@@ -1,0 +1,68 @@
+@media screen and (max-width: 992px) {
+  .navbar {
+    height: 56px;
+    .bar-left {
+      p {
+        font-size: 28px;
+      }
+      .search-bar {
+        margin-right: 1.6rem;
+        .search-input {
+          height: 30px;
+          width: 160px;
+        }
+        .icon-search {
+          font-size: 20px;
+        }
+      }
+    }
+    .bar-right {
+      padding-right: 1rem;
+      .bar-right-item {
+        font-size: 18px;
+        padding: 3px 1.2rem;
+      }
+      .bar-account-container {
+        .dropdown-menu {
+          font-size: 16px;
+          top: 1.8rem;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    height: 52px;
+    .bar-left {
+      padding-left: 8px;
+      p {
+        font-size: 22px;
+      }
+      .search-bar {
+        margin-right: 0.8rem;
+        .search-input {
+          height: 1.4rem;
+          width: 100px;
+        }
+        .icon-search {
+          font-size: 16px;
+        }
+      }
+    }
+    .bar-right {
+      padding-right: 0.6rem;
+      .bar-right-item {
+        font-size: 17px;
+        padding: 3px 0.5rem;
+      }
+      .bar-account-container {
+        .dropdown-menu {
+          font-size: 14px;
+          top: 2rem;
+        }
+      }
+    }
+  }
+}

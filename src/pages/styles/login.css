@@ -1,0 +1,62 @@
+.login-container {
+  position: relative;
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  padding-top: 6rem;
+}
+.login-container .login {
+  width: 30vw;
+  max-width: 600px;
+  min-width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.login-container .login .title {
+  font-family: "Nothing You Could Do", cursive;
+  font-size: 36px;
+  margin: 2rem;
+}
+.login-container .login .login-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.login-container .login .login-form label {
+  font-size: 18px;
+  font-weight: 300;
+  font-family: "Poppins", sans-serif;
+  padding: 0.1rem 0.5rem;
+}
+.login-container .login .login-form input {
+  text-indent: 1rem;
+  height: 38px;
+  width: 100%;
+  margin-bottom: 0.6rem;
+  border: 1px solid #e3dcd3;
+  border-radius: 40px;
+  transition: all 0.3s ease-in-out;
+}
+.login-container .login .login-form input:hover {
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-in-out;
+}
+.login-container .login .link {
+  width: 100%;
+}
+.login-container .login .link .register-button {
+  background-color: #d3c889;
+}
+.login-container .login .link .register-button:hover {
+  background-color: #dbd3a4;
+}
+.login-container .login .disabled-button {
+  cursor: not-allowed;
+  background-color: #bfbfbf;
+}
+.login-container .login .disabled-button:hover {
+  background-color: #bfbfbf;
+  box-shadow: none;
+}/*# sourceMappingURL=login.css.map */

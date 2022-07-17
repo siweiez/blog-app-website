@@ -1,0 +1,13 @@
+@import "../../styles/base";
+
+.header {
+  position: relative;
+  height: 40vh;
+  width: 100vw;
+  @include flex-center(column);
+  font-family: "Nothing You Could Do", cursive;
+  font-size: 36px;
+  text-align: center;
+  background-color: $primary-background-color;
+  box-shadow: 1px 1px 2px -1px rgba(0, 0, 0, 0.2);
+}

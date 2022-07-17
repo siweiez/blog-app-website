@@ -1,0 +1,89 @@
+@import "../../styles/base";
+
+.create-page {
+  @include set-width(80vw, 780px, 360px);
+  @include flex-center(column);
+
+  .header {
+    height: 18rem;
+  }
+  .post-form {
+    @include set-width(80vw, 780px, 360px);
+    min-height: 70vh;
+    @include flex-center(column);
+    font-size: 18px;
+    padding-top: 1rem;
+    .post-submit-button {
+      height: 3rem;
+      max-width: 400px;
+      margin-bottom: 3rem;
+      background-color: $secondary-button-color;
+      transition: all 0.2s ease-in-out;
+      box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2);
+      &:hover {
+        transition: all 0.2s ease-in-out;
+        background-color: $secondary-button-hover-color;
+      }
+    }
+    .post-form-item {
+      @include set-width(100%, 780px, 360px);
+      padding-top: 1rem;
+      @include flex-center(column);
+      .input-item:focus {
+        outline: none;
+      }
+      .post-title {
+        font-family: "Lora", serif;
+        font-size: 30px;
+        border: none;
+        @include set-width(100%, 780px, 300px);
+      }
+      textarea {
+        margin-bottom: 2rem;
+        @include set-width(100%, 780px, 300px);
+        height: 70vh;
+        font-family: "Lora", serif;
+        font-size: 24px;
+        border: none;
+        overflow: visible;
+      }
+    }
+    .post-tags {
+      .icon {
+        margin-left: 5px;
+        color: #1c1c1c;
+        @include hover-effect();
+      }
+      @include set-width(100%, 780px, 300px);
+      @include flex(row);
+      justify-content: space-between;
+      align-items: center;
+      font-family: "Courier Prime", monospace;
+      font-size: 18px;
+      ul {
+        list-style: none;
+        @include flex(row);
+        flex-wrap: wrap;
+        li {
+          cursor: pointer;
+          font-size: 18px;
+          margin: 0 0.2rem;
+          @include tag-style($secondary-background-color, $secondary-border-color);
+          @include flex-center(row);
+        }
+      }
+      .post-tags-right {
+        @include flex-center(row);
+        @include tag-style($secondary-background-color, $secondary-border-color);
+        .tag-input {
+          background-color: $secondary-background-color;
+          font-family: "Courier Prime", monospace;
+          font-size: 18px;
+          width: 120px;
+          overflow: visible;
+          border: none;
+        }
+      }
+    }
+  }
+}

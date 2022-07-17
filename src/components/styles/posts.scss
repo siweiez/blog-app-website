@@ -1,0 +1,17 @@
+@import "../../styles/base";
+
+.posts {
+  padding: 2rem 0;
+  @include flex(column);
+  @include set-width(70vw, 780px, 380px);
+  min-height: 70vh;
+  .empty-alert {
+    @include flex-center(column);
+    color: $primary-border-color;
+    font-family: 'Poppins', sans-serif;
+    font-size: 40px;
+    .icon {
+      font-size: 12rem;
+    }
+  }
+}

@@ -1,0 +1,82 @@
+.post {
+  box-shadow: 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  width: 70vw;
+  max-width: 780px;
+  min-width: 380px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: "Lora", serif;
+  font-size: 16px;
+}
+.post .post-link {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+}
+.post .post-link:hover {
+  opacity: 0.8;
+  transition: all 0.3s ease-in-out;
+}
+.post .post-link .post-title {
+  font-weight: 500;
+  font-size: 24px;
+  text-align: center;
+  color: #775e43;
+  margin-bottom: 1rem;
+}
+.post .post-link .post-description {
+  min-width: 100%;
+  text-align: left;
+  line-height: 1.6rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.post .post-footer {
+  margin-top: 1rem;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.post .post-footer .post-footer-left {
+  font-family: "Courier Prime", monospace;
+  font-size: 16px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+.post .post-footer .post-footer-left .tag {
+  cursor: pointer;
+  margin: 0 0.2rem;
+  background-color: #f7f3ee;
+  border: 1px solid #e3dcd3;
+  border-radius: 5px;
+  padding: 0.1rem 0.3rem;
+}
+.post .post-footer .post-footer-left .tag:hover {
+  opacity: 0.8;
+  transition: all 0.3s ease-in-out;
+}
+.post .post-footer .post-footer-right {
+  white-space: nowrap;
+  color: #775e43;
+  display: flex;
+  flex-direction: row;
+}
+.post .post-footer .post-footer-right .post-author:hover {
+  opacity: 0.8;
+  transition: all 0.3s ease-in-out;
+}/*# sourceMappingURL=post.css.map */

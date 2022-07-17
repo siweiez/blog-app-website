@@ -1,0 +1,21 @@
+.posts {
+  padding: 2rem 0;
+  display: flex;
+  flex-direction: column;
+  width: 70vw;
+  max-width: 780px;
+  min-width: 380px;
+  min-height: 70vh;
+}
+.posts .empty-alert {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #e3dcd3;
+  font-family: "Poppins", sans-serif;
+  font-size: 40px;
+}
+.posts .empty-alert .icon {
+  font-size: 12rem;
+}/*# sourceMappingURL=posts.css.map */

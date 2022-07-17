@@ -1,0 +1,14 @@
+.header {
+  position: relative;
+  height: 40vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: "Nothing You Could Do", cursive;
+  font-size: 36px;
+  text-align: center;
+  background-color: #f7f3ee;
+  box-shadow: 1px 1px 2px -1px rgba(0, 0, 0, 0.2);
+}/*# sourceMappingURL=header.css.map */

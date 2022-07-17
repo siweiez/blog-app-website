@@ -1,0 +1,64 @@
+@import "../../styles/base";
+
+.post {
+  box-shadow: 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  @include set-width(70vw, 780px, 380px);
+  @include flex-center(column);
+  font-family: "Lora", serif;
+  font-size: 16px;
+  .post-link {
+    width: 100%;
+    @include flex-center(column);
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+    @include hover-effect();
+    .post-title {
+      font-weight: 500;
+      font-size: 24px;
+      text-align: center;
+      color: $primary-color;
+      margin-bottom: 1rem;
+    }
+    .post-description {
+      min-width: 100%;
+      text-align: left;
+      line-height: 1.6rem;
+      display: -webkit-box;
+      -webkit-line-clamp: 4;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+
+  .post-footer {
+    margin-top: 1rem;
+    width: 100%;
+    @include flex(row);
+    align-items: center;
+    justify-content: space-between;
+    .post-footer-left {
+      font-family: "Courier Prime", monospace;
+      font-size: 16px;
+      @include flex(row);
+      justify-content: flex-start;
+      .tag {
+        cursor: pointer;
+        margin: 0 0.2rem;
+        @include tag-style($primary-background-color, $primary-border-color);
+        @include hover-effect();
+      }
+    }
+    .post-footer-right {
+      white-space: nowrap;
+      color: $primary-color;
+      @include flex(row);
+      .post-author {
+        @include hover-effect();
+      }
+    }
+  }
+}

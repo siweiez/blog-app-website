@@ -1,0 +1,32 @@
+@import "../../styles/base";
+
+.about {
+  @include flex(column);
+  align-items: center;
+  .about-content {
+    font-family: "Lora", serif;
+    @include set-width(78vw, 1200px, 380px);
+    @include flex(row);
+    justify-content: center;
+    margin: 3rem;
+    min-height: 50vh;
+    font-size: 18px;
+    line-height: 1.8rem;
+    .left-content {
+      padding: 0 1rem;
+      h2 {
+        padding-bottom: 1rem;
+        font-weight: 500;
+      }
+    }
+    .profile-picture {
+      .picture {
+        border: 1px solid $primary-border-color;
+        border-radius: 30px;
+        @include set-width(28vw, 300px, 200px);
+      }
+    }
+  }
+}
+
+@import "./mediaqueries";

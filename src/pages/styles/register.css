@@ -1,0 +1,66 @@
+.register-container {
+  position: relative;
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  padding-top: 6rem;
+}
+.register-container .register {
+  transition: all 0.3s ease-in-out;
+  min-width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.register-container .register span {
+  padding-left: 10px;
+  color: #c64343;
+  font-family: "Poppins", sans-serif;
+}
+.register-container .register .title {
+  font-family: "Nothing You Could Do", cursive;
+  font-size: 36px;
+  margin: 2rem;
+}
+.register-container .register .register-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.register-container .register .register-form label {
+  font-size: 18px;
+  font-weight: 300;
+  font-family: "Poppins", sans-serif;
+  padding: 0.1rem 0.5rem;
+}
+.register-container .register .register-form input {
+  text-indent: 1rem;
+  height: 38px;
+  width: 100%;
+  margin-bottom: 0.6rem;
+  border: 1px solid #e3dcd3;
+  border-radius: 40px;
+  transition: all 0.3s ease-in-out;
+}
+.register-container .register .register-form input:hover {
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-in-out;
+}
+.register-container .register .link {
+  width: 100%;
+}
+.register-container .register .link .login-button {
+  background-color: #d3c889;
+}
+.register-container .register .link .login-button:hover {
+  background-color: #dbd3a4;
+}
+.register-container .register .disabled-button {
+  cursor: default;
+  background-color: #bfbfbf;
+}
+.register-container .register .disabled-button:hover {
+  background-color: #bfbfbf;
+  box-shadow: none;
+}/*# sourceMappingURL=register.css.map */
