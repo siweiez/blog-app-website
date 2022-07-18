@@ -33,12 +33,19 @@
 }
 
 @media screen and (max-width: 768px) {
+  .header {
+    font-size: 28px;
+    height: 30vh;
+  }
   .navbar {
-    height: 52px;
+    @include flex(column);
+    align-items: initial;
+    height: 78px;
     .bar-left {
-      padding-left: 8px;
+      align-self: center;
+      padding-left: 0;
       p {
-        font-size: 22px;
+        font-size: 28px;
       }
       .search-bar {
         margin-right: 0.8rem;
@@ -52,7 +59,7 @@
       }
     }
     .bar-right {
-      padding-right: 0.6rem;
+      padding: 0 1rem;
       .bar-right-item {
         font-size: 17px;
         padding: 3px 0.5rem;
@@ -61,7 +68,18 @@
         .dropdown-menu {
           font-size: 14px;
           top: 2rem;
+          right: -5px;
         }
+      }
+    }
+  }
+  .post {
+    .post-footer {
+      @include flex(column);
+      align-items: center;
+      justify-content: space-between;
+      .post-footer-left {
+        margin-bottom: 10px;
       }
     }
   }

@@ -39,7 +39,7 @@ function Posts() {
         :
         <div className='empty-alert'>
           <AiOutlineMeh className='icon' />
-          <p>There is no any post yet...</p>
+          <p>There is no any post...</p>
         </div>
       }
     </div>

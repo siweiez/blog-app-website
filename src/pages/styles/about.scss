@@ -5,7 +5,7 @@
   align-items: center;
   .about-content {
     font-family: "Lora", serif;
-    @include set-width(78vw, 1200px, 380px);
+    @include set-width(78vw, 1200px, 320px);
     @include flex(row);
     justify-content: center;
     margin: 3rem;

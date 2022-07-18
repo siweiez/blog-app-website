@@ -1,14 +1,14 @@
 @import "../../styles/base";
 
 .create-page {
-  @include set-width(80vw, 780px, 360px);
+  @include set-width(80vw, 780px, 320px);
   @include flex-center(column);
 
   .header {
     height: 18rem;
   }
   .post-form {
-    @include set-width(80vw, 780px, 360px);
+    @include set-width(80vw, 780px, 320px);
     min-height: 70vh;
     @include flex-center(column);
     font-size: 18px;
@@ -26,7 +26,7 @@
       }
     }
     .post-form-item {
-      @include set-width(100%, 780px, 360px);
+      @include set-width(100%, 780px, 320px);
       padding-top: 1rem;
       @include flex-center(column);
       .input-item:focus {

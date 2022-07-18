@@ -8,7 +8,7 @@
   .edit-mode {
     padding-top: 2rem;
     @include flex-center(column);
-    @include set-width(60vw, 760px, 400px);
+    @include set-width(60vw, 760px, 320px);
     .edit-form {
       font-size: 18px;
       @include flex-center(column);
@@ -25,7 +25,7 @@
           font-family: "Lora", serif;
           font-size: 30px;
           border: none;
-          @include set-width(60vw, 760px, 400px);
+          @include set-width(60vw, 760px, 320px);
         }
       }
       .edit-tags {
@@ -69,7 +69,7 @@
       .edit-content {
         .edit-content-input {
           margin-bottom: 2rem;
-          @include set-width(60vw, 760px, 400px);
+          @include set-width(60vw, 760px, 320px);
           height: 70vh;
           font-family: "Lora", serif;
           font-size: 22px;
@@ -96,7 +96,7 @@
   }
 
   .view-mode {
-    @include set-width(60vw, 760px, 400px);
+    @include set-width(60vw, 760px, 320px);
     .view-title {
       text-align: center;
       font-size: 30px;

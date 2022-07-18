@@ -39,6 +39,21 @@
 }
 @media screen and (max-width: 768px) {
   .postview {
+    .edit-mode {
+      padding-top: 0;
+      .edit-form {
+        .edit-title {
+          .edit-title-input {
+            font-size: 22px;
+          }
+        }
+        .edit-content {
+          .edit-content-input {
+            font-size: 16px;
+          }
+        }
+      }
+    }
     .view-mode {
       @include post-view(22px, 14px, 20px, 14px, 1.5rem, 12px);
     }
@@ -53,6 +68,11 @@
       .profile-picture {
         margin-top: 2rem;
       }
+    }
+  }
+  .user {
+    .user-info {
+      font-size: 16px;
     }
   }
 }

@@ -4,7 +4,7 @@
   box-shadow: 0 1px 2px -1px rgba(0, 0, 0, 0.1);
   padding-bottom: 1rem;
   margin-bottom: 1rem;
-  @include set-width(70vw, 780px, 380px);
+  @include set-width(70vw, 780px, 320px);
   @include flex-center(column);
   font-family: "Lora", serif;
   font-size: 16px;
@@ -62,3 +62,5 @@
     }
   }
 }
+
+@import './mediaqueries';

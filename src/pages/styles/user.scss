@@ -8,7 +8,7 @@
   padding: 2rem 0;
   .user-info {
     @include flex-center(column);
-    @include set-width(30%, 380px, 180px);
+    @include set-width(30%, 380px, 300px);
     font-family: "Lora", serif;
     .info-item {
       @include flex(row);
@@ -47,3 +47,5 @@
     }
   }
 }
+
+@import './mediaqueries';

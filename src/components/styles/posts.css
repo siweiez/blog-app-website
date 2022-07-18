@@ -4,7 +4,7 @@
   flex-direction: column;
   width: 70vw;
   max-width: 780px;
-  min-width: 380px;
+  min-width: 320px;
   min-height: 70vh;
 }
 .posts .empty-alert {

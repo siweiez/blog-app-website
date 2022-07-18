@@ -15,7 +15,7 @@
   justify-content: center;
   width: 60vw;
   max-width: 760px;
-  min-width: 400px;
+  min-width: 320px;
 }
 .postview .edit-mode .edit-form {
   font-size: 18px;
@@ -43,7 +43,7 @@
   border: none;
   width: 60vw;
   max-width: 760px;
-  min-width: 400px;
+  min-width: 320px;
 }
 .postview .edit-mode .edit-form .edit-tags {
   margin-bottom: 1rem;
@@ -106,7 +106,7 @@
   margin-bottom: 2rem;
   width: 60vw;
   max-width: 760px;
-  min-width: 400px;
+  min-width: 320px;
   height: 70vh;
   font-family: "Lora", serif;
   font-size: 22px;
@@ -131,7 +131,7 @@
 .postview .view-mode {
   width: 60vw;
   max-width: 760px;
-  min-width: 400px;
+  min-width: 320px;
 }
 .postview .view-mode .view-title {
   text-align: center;
@@ -221,6 +221,15 @@
   }
 }
 @media screen and (max-width: 768px) {
+  .postview .edit-mode {
+    padding-top: 0;
+  }
+  .postview .edit-mode .edit-form .edit-title .edit-title-input {
+    font-size: 22px;
+  }
+  .postview .edit-mode .edit-form .edit-content .edit-content-input {
+    font-size: 16px;
+  }
   .postview .view-mode .view-title {
     font-size: 22px;
   }
@@ -247,5 +256,8 @@
   }
   .about .about-content .profile-picture {
     margin-top: 2rem;
+  }
+  .user .user-info {
+    font-size: 16px;
   }
 }/*# sourceMappingURL=postview.css.map */

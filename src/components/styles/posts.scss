@@ -3,7 +3,7 @@
 .posts {
   padding: 2rem 0;
   @include flex(column);
-  @include set-width(70vw, 780px, 380px);
+  @include set-width(70vw, 780px, 320px);
   min-height: 70vh;
   .empty-alert {
     @include flex-center(column);
