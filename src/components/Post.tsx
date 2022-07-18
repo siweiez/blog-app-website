@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import ReactMarkdown from "react-markdown";
 import './styles/post.scss';
 
 function Post({ post }: any) {
@@ -7,7 +8,9 @@ function Post({ post }: any) {
       <Link to={`/posts/${post._id}`} className="post-link">
         <div className='post-title'>{post.title}</div>
         <div className='post-description'>
+          <ReactMarkdown>
           {post.description}
+          </ReactMarkdown>
         </div>
       </Link>
       <div className="post-footer">

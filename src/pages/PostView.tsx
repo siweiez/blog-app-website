@@ -7,6 +7,7 @@ import { TiDeleteOutline } from "react-icons/ti";
 import axios from 'axios';
 import { Context } from '../context/Context';
 import Button from '../components/Button';
+import ReactMarkdown from "react-markdown";
 
 function PostView() {
   const { state } = useContext(Context);
@@ -144,7 +145,6 @@ function PostView() {
                   <p className='tag'>{category.name}</p>
                 </Link>
               ))}
-
             </div>
             {user ?
               <>
@@ -162,7 +162,7 @@ function PostView() {
             }
           </div>
           <div className="view-content">
-            {post.description}
+            <ReactMarkdown>{post.description}</ReactMarkdown>
           </div>
           <div className="view-footer">
             <Link to={`/posts/?user=${post.username}`} className="link">
