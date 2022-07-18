@@ -6,6 +6,7 @@ import { IoAddCircleOutline } from "react-icons/io5";
 import { TiDeleteOutline } from "react-icons/ti";
 import axios from 'axios';
 import { Context } from '../context/Context';
+import Button from '../components/Button';
 
 function PostView() {
   const { state } = useContext(Context);
@@ -19,7 +20,7 @@ function PostView() {
     categories: []
   });
   const location = useLocation();
-  const postId = location.pathname.split("/")[2];
+  const postId = location.pathname.split("/")[2].substring(0, 24);
   const [editMode, setEditMode] = useState(false);
   const [newTitle, setNewTitle] = useState("");
   const [newDescription, setNewDescription] = useState("");
@@ -35,7 +36,7 @@ function PostView() {
       setNewCategories(response.data.categories);
     }
     getPost();
-  }, [postId]);
+  }, [postId, editMode]);
 
   // delete post
   const handleDelete = async () => {
@@ -59,17 +60,20 @@ function PostView() {
   const handleEditSubmit = async () => {
     // const rootUrl = "http://localhost:5000/api/";
     try {
-      const res = await axios.put((process.env.REACT_APP_API_URL + `posts/${post._id}`), {
+      await axios.put((process.env.REACT_APP_API_URL + `posts/${postId}`), {
         username: user.username,
         title: newTitle,
         description: newDescription,
         categories: newCategories
       });
       setEditMode(false);
-      console.log(res);
     } catch (err) {
       console.log(err);
     }
+  }
+
+  const handleCancel = () => {
+    setEditMode(false);
   }
 
   const handleNewTag = () => {
@@ -87,7 +91,7 @@ function PostView() {
     <div className="postview">
       {editMode ?
         <div className="edit-mode">
-          <form className="edit-form" onSubmit={handleEditSubmit}>
+          <div className="edit-form">
             <div className="edit-title edit-form-item">
               <input
                 type="text"
@@ -126,8 +130,9 @@ function PostView() {
               >
               </textarea>
             </div>
-            <button className="edit-submit-button edit-form-item" type="submit">Save</button>
-          </form>
+            <Button className="edit-submit-button edit-form-item" onClick={handleEditSubmit}>Save</Button>
+            <Button className="edit-cancel-button edit-form-item" onClick={handleCancel}>Cancel</Button>
+          </div>
         </div>
         :
         <div className="view-mode">

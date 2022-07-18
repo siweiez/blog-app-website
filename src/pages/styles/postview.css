@@ -117,13 +117,16 @@
 .postview .edit-mode .edit-form .edit-submit-button {
   height: 3rem;
   max-width: 400px;
-  margin-bottom: 3rem;
   background-color: #97b26c;
   transition: all 0.2s ease-in-out;
 }
 .postview .edit-mode .edit-form .edit-submit-button:hover {
   transition: all 0.2s ease-in-out;
   background-color: #a5be7c;
+}
+.postview .edit-mode .edit-form .edit-cancel-button {
+  height: 3rem;
+  max-width: 400px;
 }
 .postview .view-mode {
   width: 60vw;

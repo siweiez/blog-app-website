@@ -4,7 +4,7 @@ import './styles/post.scss';
 function Post({ post }: any) {
   return (
     <div className="post">
-      <Link to={`/post/${post._id}`} className="post-link">
+      <Link to={`/posts/${post._id}`} className="post-link">
         <div className='post-title'>{post.title}</div>
         <div className='post-description'>
           {post.description}

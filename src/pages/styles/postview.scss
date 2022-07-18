@@ -81,13 +81,16 @@
       .edit-submit-button {
         height: 3rem;
         max-width: 400px;
-        margin-bottom: 3rem;
         background-color: $secondary-button-color;
         transition: all 0.2s ease-in-out;
         &:hover {
           transition: all 0.2s ease-in-out;
           background-color: $secondary-button-hover-color;
         }
+      }
+      .edit-cancel-button {
+        height: 3rem;
+        max-width: 400px;
       }
     }
   }

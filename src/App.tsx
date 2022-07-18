@@ -30,7 +30,7 @@ function App() {
             <Route path='/about' element={<About />} />
             <Route path='/user' element={user ? <User /> : <Home />} />
             <Route path='/create' element={user ? <CreatePage /> : <Home />} />
-            <Route path='/post/:id' element={<PostView />} />
+            <Route path='/posts/:id' element={<PostView />} />
           </Routes>
         </div>
         <Footer />
