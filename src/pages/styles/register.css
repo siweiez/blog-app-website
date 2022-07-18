@@ -3,11 +3,11 @@
   min-height: 70vh;
   display: flex;
   flex-direction: column;
-  padding-top: 6rem;
+  padding-top: 3vh;
 }
 .register-container .register {
   transition: all 0.3s ease-in-out;
-  min-width: 400px;
+  min-width: 320px;
   display: flex;
   flex-direction: column;
   align-items: center;

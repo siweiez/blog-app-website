@@ -4,9 +4,9 @@
   position: relative;
   min-height: 70vh;
   @include flex(column);
-  padding-top: 6rem;
+  padding-top: 3vh;
   .login {
-    @include set-width(30vw, 600px, 400px);
+    @include set-width(30vw, 600px, 320px);
     @include flex-center(column);
     .title {
       font-family: "Nothing You Could Do", cursive;
