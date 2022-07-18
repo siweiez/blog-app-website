@@ -34,7 +34,7 @@ function CreatePage() {
     };
     try {
       const res = await axios.post(process.env.REACT_APP_API_URL + "posts", post);
-      window.location.replace("post/" + res.data._id);
+      window.location.replace("posts/" + res.data._id);
     } catch (err) {
       console.log(err);
     }
