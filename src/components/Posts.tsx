@@ -23,7 +23,6 @@ function Posts() {
         if (dateA > dateB) return -1;
         return 0;
       });
-      // console.log(sortedPosts);
       setPosts(sortedPosts);
     };
     fetchPosts();

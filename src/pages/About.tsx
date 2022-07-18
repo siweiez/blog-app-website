@@ -15,7 +15,7 @@ function About() {
           </p>
         </div>
         <a className="link profile-picture" href="https://www.zcool.com.cn/u/282121" target="_blank" rel="noreferrer">
-          <img src={profilePic} alt="profile-photo" className="picture" />
+          <img src={profilePic} alt="" className="picture" />
         </a>
       </div>
     </div >
