@@ -33,8 +33,8 @@ function CreatePage() {
       categories
     };
     try {
-      const res = await axios.post("/posts", post);
-      window.location.replace("/post/" + res.data._id);
+      const res = await axios.post(process.env.REACT_APP_API_URL + "posts", post);
+      window.location.replace("post/" + res.data._id);
     } catch (err) {
       console.log(err);
     }

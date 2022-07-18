@@ -15,7 +15,8 @@ function Posts() {
 
   useEffect(() => {
     const fetchPosts = async () => {
-      const response = await axios.get("/posts/" + search);
+      // const rootUrl = "http://localhost:5000/api/";
+      const response = await axios.get((process.env.REACT_APP_API_URL + "posts/" + search));
       const sortedPosts = response.data.sort(function (a: any, b: any) {
         var dateA = new Date(a.createdAt), dateB = new Date(b.createdAt);
         // Compare the 2 dates
@@ -37,9 +38,9 @@ function Posts() {
         ))
         :
         <div className='empty-alert'>
-          <AiOutlineMeh className='icon'/>
+          <AiOutlineMeh className='icon' />
           <p>There is no any post yet...</p>
-          </div>
+        </div>
       }
     </div>
   );

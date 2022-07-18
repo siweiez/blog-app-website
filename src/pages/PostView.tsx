@@ -10,7 +10,6 @@ import { Context } from '../context/Context';
 function PostView() {
   const { state } = useContext(Context);
   const user = state.user;
-
   const [post, setPost] = useState({
     _id: null,
     title: "",
@@ -22,26 +21,27 @@ function PostView() {
   const location = useLocation();
   const postId = location.pathname.split("/")[2];
   const [editMode, setEditMode] = useState(false);
-  const [title, setTitle] = useState("");
-  const [description, setDescription] = useState("");
-  const [categories, setCategories] = useState<any[]>([]);
+  const [newTitle, setNewTitle] = useState("");
+  const [newDescription, setNewDescription] = useState("");
+  const [newCategories, setNewCategories] = useState<any[]>([]);
   const [tag, setTag] = useState("");
 
   useEffect(() => {
     const getPost = async () => {
-      const response = await axios.get("/posts/" + postId);
+      const response = await axios.get(process.env.REACT_APP_API_URL + "posts/" + postId);
       setPost(response.data);
-      setTitle(response.data.title);
-      setDescription(response.data.description);
-      setCategories(response.data.categories);
+      setNewTitle(response.data.title);
+      setNewDescription(response.data.description);
+      setNewCategories(response.data.categories);
     }
     getPost();
   }, [postId]);
 
+  // delete post
   const handleDelete = async () => {
     if (user.username === post.username) {
       try {
-        await axios.delete(`/posts/${post._id}`, {
+        await axios.delete(process.env.REACT_APP_API_URL + `posts/${post._id}`, {
           data: { username: user.username },
         });
         window.location.replace("/");
@@ -55,29 +55,31 @@ function PostView() {
     setEditMode(true);
   }
 
-  const handleNewTag = () => {
-    const newTag = { name: tag };
-    setCategories([...categories, newTag]);
-  }
-
-  function handleDeleteTag(tag: string) {
-    const newCats = categories.filter(t => t.name !== tag);
-    setCategories(newCats);
-  }
-
+  // edit post
   const handleEditSubmit = async () => {
+    // const rootUrl = "http://localhost:5000/api/";
     try {
-      await axios.put(`/posts/${post._id}`, {
+      const res = await axios.put((process.env.REACT_APP_API_URL + `posts/${post._id}`), {
         username: user.username,
-        title,
-        description,
-        categories
+        title: newTitle,
+        description: newDescription,
+        categories: newCategories
       });
       setEditMode(false);
+      console.log(res);
     } catch (err) {
       console.log(err);
     }
+  }
 
+  const handleNewTag = () => {
+    const newTag = { name: tag };
+    setNewCategories([...newCategories, newTag]);
+  }
+
+  function handleDeleteTag(tag: string) {
+    const newCats = newCategories.filter(t => t.name !== tag);
+    setNewCategories(newCats);
   }
 
   return (
@@ -90,15 +92,15 @@ function PostView() {
               <input
                 type="text"
                 className='edit-title-input input-item'
-                onChange={e => setTitle(e.target.value)}
-                defaultValue={title}
+                onChange={e => setNewTitle(e.target.value)}
+                defaultValue={newTitle}
                 placeholder="Title"
               >
               </input>
             </div>
             <div className="edit-form-item edit-tags">
               <ul>
-                {categories?.map(t => (
+                {newCategories?.map(t => (
                   <li key={t.name}>
                     {t.name}
                     <TiDeleteOutline className="icon" onClick={() => handleDeleteTag(t.name)} />
@@ -118,8 +120,8 @@ function PostView() {
             <div className="edit-content edit-form-item">
               <textarea
                 className='edit-content-input input-item'
-                onChange={e => setDescription(e.target.value)}
-                defaultValue={description}
+                onChange={e => setNewDescription(e.target.value)}
+                defaultValue={newDescription}
                 placeholder="Text here..."
               >
               </textarea>

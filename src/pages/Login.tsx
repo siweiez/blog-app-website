@@ -15,7 +15,7 @@ function Login() {
     dispatch({ type: "LOGIN_START" });
     try {
       // login http request
-      const response = await axios.post("/auth/login", {
+      const response = await axios.post(process.env.REACT_APP_API_URL + "auth/login", {
         username: userRef.current.value,
         password: passwordRef.current.value,
       });

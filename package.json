@@ -11,6 +11,7 @@
     "@types/react": "^18.0.15",
     "@types/react-dom": "^18.0.6",
     "axios": "^0.27.2",
+    "dotenv": "^16.0.1",
     "npm-check-updates": "^15.2.6",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -46,6 +47,5 @@
   },
   "devDependencies": {
     "sass": "^1.53.0"
-  },
-  "proxy": "https://blog-app-express-api.herokuapp.com/api/"
+  }
 }

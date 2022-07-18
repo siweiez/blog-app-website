@@ -15,7 +15,7 @@ function User() {
 
   useEffect(() => {
     const fetchPosts = async () => {
-      const response = await axios.get("/posts?user=" + user.username);
+      const response = await axios.get(process.env.REACT_APP_API_URL + "posts?user=" + user.username);
       setPosts(response.data);
     };
     fetchPosts();
