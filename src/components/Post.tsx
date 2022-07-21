@@ -8,7 +8,7 @@ function Post({ post }: any) {
       <Link to={`/posts/${post._id}`} className="post-link">
         <div className='post-title'>{post.title}</div>
         <div className='post-description'>
-          <ReactMarkdown>
+          <ReactMarkdown className='post-descrition-md'>
           {post.description}
           </ReactMarkdown>
         </div>

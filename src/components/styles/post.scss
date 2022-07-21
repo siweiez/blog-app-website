@@ -23,14 +23,13 @@
       margin-bottom: 1rem;
     }
     .post-description {
-      min-width: 100%;
+      display: inline-block;
       text-align: left;
       line-height: 1.6rem;
-      display: -webkit-box;
-      -webkit-line-clamp: 4;
-      -webkit-box-orient: vertical;
+      height: 4.8rem;
+      @include set-width(100%, 780px, 320px);
       overflow: hidden;
-      text-overflow: ellipsis;
+      opacity: 0.8;
     }
   }
 
@@ -63,4 +62,4 @@
   }
 }
 
-@import './mediaqueries';
+@import "./mediaqueries";
