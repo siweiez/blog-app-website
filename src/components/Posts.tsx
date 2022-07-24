@@ -7,6 +7,7 @@ import { AiOutlineMeh } from "react-icons/ai";
 
 function Posts() {
   const [posts, setPosts] = useState<any[]>([]);
+  const [loading, setLoading] = useState(true);
   const { search } = useLocation();
   // search can be:
   // "?user=user1"
@@ -25,21 +26,33 @@ function Posts() {
         return 0;
       });
       setPosts(sortedPosts);
+      setLoading(false);
     };
     fetchPosts();
   }, [search]);
 
   return (
     <div className="posts">
-      {posts.length !== 0
-        ?
-        posts.map((post) => (
-          <Post post={post} key={post._id} />
-        ))
+      {loading ?
+        <div>
+          <div className="spinner-container">
+            <div className="loading-spinner"></div>
+          </div>
+          <div className="posts-alert">Loading Posts...</div>
+        </div>
         :
-        <div className='empty-alert'>
-          <AiOutlineMeh className='icon' />
-          <p>There is no any post...</p>
+        <div>
+          {
+            (posts.length !== 0) ?
+              posts.map((post) => (
+                <Post post={post} key={post._id} />
+              ))
+              :
+              <div className='posts-alert'>
+                <AiOutlineMeh className='icon' />
+                <p>There is no any post...</p>
+              </div>
+          }
         </div>
       }
     </div>

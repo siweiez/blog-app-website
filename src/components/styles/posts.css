@@ -1,3 +1,19 @@
+@-webkit-keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 .posts {
   padding: 2rem 0;
   display: flex;
@@ -7,7 +23,22 @@
   min-width: 320px;
   min-height: 70vh;
 }
-.posts .empty-alert {
+.posts .spinner-container {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  height: 120px;
+}
+.posts .spinner-container .loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 10px solid #f7f3ee;
+  border-top: 10px solid #775e43;
+  border-radius: 50%;
+  -webkit-animation: spinner 1.5s linear infinite;
+          animation: spinner 1.5s linear infinite;
+}
+.posts .posts-alert {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -16,6 +47,6 @@
   font-family: "Poppins", sans-serif;
   font-size: 40px;
 }
-.posts .empty-alert .icon {
+.posts .posts-alert .icon {
   font-size: 12rem;
 }/*# sourceMappingURL=posts.css.map */
