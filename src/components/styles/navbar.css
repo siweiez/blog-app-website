@@ -3,7 +3,6 @@
   z-index: 10;
   width: 100vw;
   height: 62px;
-  position: -webkit-sticky;
   position: sticky;
   top: 0;
   white-space: nowrap;

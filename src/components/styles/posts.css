@@ -1,11 +1,3 @@
-@-webkit-keyframes spinner {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
 @keyframes spinner {
   0% {
     transform: rotate(0deg);
@@ -35,8 +27,7 @@
   border: 10px solid #f7f3ee;
   border-top: 10px solid #775e43;
   border-radius: 50%;
-  -webkit-animation: spinner 1.5s linear infinite;
-          animation: spinner 1.5s linear infinite;
+  animation: spinner 1.5s linear infinite;
 }
 .posts .posts-alert {
   display: flex;

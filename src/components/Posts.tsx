@@ -4,8 +4,12 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { AiOutlineMeh } from "react-icons/ai";
+import Pagination from './Pagination';
 
 function Posts() {
+  const postsPerPage = 8;
+  const [currentPage, setCurrentPage] = useState(1);
+
   const [posts, setPosts] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
   const { search } = useLocation();
@@ -14,22 +18,24 @@ function Posts() {
   // "?category=cat"
   // "?search=helo"
 
+  function sortByDate(itemA: any, itemB: any) {
+    const dateA = new Date(itemA.createdAt), dateB = new Date(itemB.createdAt);
+    if (dateA < dateB) return 1;
+    if (dateA > dateB) return -1;
+    return 0;
+  }
+
   useEffect(() => {
-    const fetchPosts = async () => {
+    const setTotalPosts = async () => {
       // const rootUrl = "http://localhost:5000/api/";
-      const response = await axios.get((process.env.REACT_APP_API_URL + "posts/" + search));
-      const sortedPosts = response.data.sort(function (a: any, b: any) {
-        var dateA = new Date(a.createdAt), dateB = new Date(b.createdAt);
-        // Compare the 2 dates
-        if (dateA < dateB) return 1;
-        if (dateA > dateB) return -1;
-        return 0;
-      });
-      setPosts(sortedPosts);
-      setLoading(false);
-    };
-    fetchPosts();
+      const result = await axios.get((process.env.REACT_APP_API_URL + "posts/" + search));
+      setPosts(result.data.sort(sortByDate));
+    }
+    setTotalPosts();
+    setLoading(false);
   }, [search]);
+
+  const currentPagePosts = posts.slice((currentPage - 1) * postsPerPage, currentPage * postsPerPage);
 
   return (
     <div className="posts">
@@ -43,8 +49,8 @@ function Posts() {
         :
         <div>
           {
-            (posts.length !== 0) ?
-              posts.map((post) => (
+            (currentPagePosts.length > 0) ?
+              currentPagePosts.map((post) => (
                 <Post post={post} key={post._id} />
               ))
               :
@@ -53,6 +59,11 @@ function Posts() {
                 <p>There is no any post...</p>
               </div>
           }
+          <Pagination
+            postsPerPage={postsPerPage}
+            totalPostsAmount={posts.length}
+            setCurrentPage={setCurrentPage}
+            currentPage={currentPage} />
         </div>
       }
     </div>

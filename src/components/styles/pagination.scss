@@ -1,0 +1,24 @@
+@import '../../styles/base';
+
+.pagination {
+  padding-top: 50px;
+  .button-container {
+    @include flex-center(row);
+    button {
+      width: 40px;
+      margin: 0 5px;
+      color: $primary-color;
+      background-color: white;
+    }
+    .active-button {
+      background-color: $primary-background-color;
+    }
+    button:disabled {
+      opacity: 0.1;
+    }
+    .icon {
+      @include flex-center(row);
+      font-size: 20px;
+    }
+  }
+}
