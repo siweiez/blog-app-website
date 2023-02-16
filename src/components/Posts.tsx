@@ -8,10 +8,11 @@ import Pagination from './Pagination';
 
 function Posts() {
   const postsPerPage = 8;
-  const [currentPage, setCurrentPage] = useState(1);
 
   const [posts, setPosts] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
+  const [currentPagePosts, setCurrentPagePosts] = useState<any[]>([]);
+  const [currentPage, setCurrentPage] = useState(1);
   const { search } = useLocation();
   // search can be:
   // "?user=user1"
@@ -30,12 +31,15 @@ function Posts() {
       // const rootUrl = "http://localhost:5000/api/";
       const result = await axios.get((process.env.REACT_APP_API_URL + "posts/" + search));
       setPosts(result.data.sort(sortByDate));
+      setCurrentPagePosts(result.data.sort(sortByDate).slice((currentPage - 1) * postsPerPage, currentPage * postsPerPage));
+      setLoading(false);
     }
     setTotalPosts();
-    setLoading(false);
   }, [search]);
 
-  const currentPagePosts = posts.slice((currentPage - 1) * postsPerPage, currentPage * postsPerPage);
+  const slicePosts = (page: number) => {
+    setCurrentPagePosts(posts.slice((page - 1) * postsPerPage, page * postsPerPage));
+  };
 
   return (
     <div className="posts">
@@ -60,10 +64,11 @@ function Posts() {
               </div>
           }
           <Pagination
-            postsPerPage={postsPerPage}
             totalPostsAmount={posts.length}
+            postsPerPage={postsPerPage}
             setCurrentPage={setCurrentPage}
-            currentPage={currentPage} />
+            currentPage={currentPage}
+            slicePosts={slicePosts} />
         </div>
       }
     </div>

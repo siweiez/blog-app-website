@@ -3,41 +3,43 @@ import './styles/pagination.scss';
 import { MdNavigateNext, MdNavigateBefore } from "react-icons/md";
 
 interface Props {
-  postsPerPage: number,
   totalPostsAmount: number,
-  setCurrentPage: any
-  currentPage: number
+  postsPerPage: number,
+  setCurrentPage: any,
+  currentPage: number,
+  slicePosts: (page: number) => void
 }
 
 const Pagination: React.FC<Props> = ({
-  postsPerPage, totalPostsAmount, setCurrentPage, currentPage
+  totalPostsAmount, postsPerPage, setCurrentPage, currentPage, slicePosts
 }) => {
-  let pageNumbers: number[] = [];
+  const pageNumbers = Array.from({length: Math.ceil(totalPostsAmount / postsPerPage)}, (_, i) => i + 1);
 
-  for (let i = 1; i <= Math.ceil(totalPostsAmount / postsPerPage); i++) {
-    pageNumbers.push(i);
-  }
+  const handlePagination = (page: number) => {
+    setCurrentPage(page);
+    slicePosts(page);
+  };
 
   return (
     <div className="pagination">
       {totalPostsAmount > 0
         ?
         <div className="button-container">
-          <button onClick={() => setCurrentPage(currentPage - 1)} className="icon" disabled={currentPage <= 1}>
+          <button onClick={() => handlePagination(currentPage - 1)} className="icon" disabled={currentPage <= 1}>
             <MdNavigateBefore />
           </button>
 
           {
             pageNumbers.map(pageNumber => (
               <button key={pageNumber - 1}
-                onClick={() => setCurrentPage(pageNumber)}
+                onClick={() => handlePagination(pageNumber)}
                 className={pageNumber === currentPage ? "active-button" : ""}>
                 {pageNumber}
               </button>
             ))
           }
 
-          <button onClick={() => setCurrentPage(currentPage + 1)} className="icon" disabled={currentPage >= pageNumbers.length}>
+          <button onClick={() => handlePagination(currentPage + 1)} className="icon" disabled={currentPage >= pageNumbers.length}>
             <MdNavigateNext />
           </button>
         </div>
